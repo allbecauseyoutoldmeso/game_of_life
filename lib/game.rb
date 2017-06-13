@@ -15,10 +15,14 @@ class Game
     cell_neighbours = []
     row = grid.flatten.index(cell)/size
     column = grid.flatten.index(cell) % size
-    push_cells(row-1, column, cell_neighbours, false) unless row == 0
-    push_cells(row, column, cell_neighbours, true)
-    push_cells(row+1, column, cell_neighbours, false) unless row == size-1
+    make_neighbours_array(row, column, cell_neighbours)
     cell_neighbours
+  end
+
+  def make_neighbours_array(row, column, array)
+    push_cells(row-1, column, array, false) unless row == 0
+    push_cells(row, column, array, true)
+    push_cells(row+1, column, array, false) unless row == size-1
   end
 
   def push_cells(row, column, array, home_row)
