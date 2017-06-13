@@ -33,18 +33,18 @@ describe Game do
 
   describe '#neighbours' do
     it 'returns an array of cell neighbours' do
-      expect(game.neighbours(cell_11)).to eq [cell_10, cell_12, cell_01, cell_21]
+      expect(game.neighbours(cell_11)).to eq [cell_00, cell_01, cell_02, cell_10, cell_12, cell_20, cell_21, cell_22]
     end
     it 'can handle edge cases' do
-      expect(game.neighbours(cell_00)).to eq [cell_01, cell_10]
-      expect(game.neighbours(cell_33)).to eq [cell_32, cell_23]
+      expect(game.neighbours(cell_00)).to eq [cell_01, cell_10, cell_11]
+      expect(game.neighbours(cell_33)).to eq [cell_22, cell_23, cell_32]
     end
   end
 
   describe '#number_live' do
     it 'returns the number of live neighbours' do
-      expect(game.number_live(cell_31)).to eq 1
-      expect(game.number_live(cell_11)).to eq 2
+      expect(game.number_live(cell_31)).to eq 2
+      expect(game.number_live(cell_11)).to eq 3
     end
   end
 

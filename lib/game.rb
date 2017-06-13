@@ -11,12 +11,22 @@ class Game
     cell_neighbours = []
     row = grid.flatten.index(cell)/size
     column = grid.flatten.index(cell) % size
-    puts row
-    puts column
+
+    unless row == 0
+      cell_neighbours.push grid[row-1][column-1] unless column == 0
+      cell_neighbours.push grid[row-1][column]
+      cell_neighbours.push grid[row-1][column+1] unless column == size-1
+    end
+
     cell_neighbours.push grid[row][column-1] unless column == 0
     cell_neighbours.push grid[row][column+1] unless column == size-1
-    cell_neighbours.push grid[row-1][column] unless row == 0
-    cell_neighbours.push grid[row+1][column] unless row == size-1
+
+    unless row == size-1      
+      cell_neighbours.push grid[row+1][column-1] unless column == 0
+      cell_neighbours.push grid[row+1][column]
+      cell_neighbours.push grid[row+1][column+1] unless column == size-1
+    end
+
     cell_neighbours
   end
 
