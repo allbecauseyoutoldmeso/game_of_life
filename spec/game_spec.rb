@@ -57,6 +57,10 @@ describe Game do
       game.tick
       expect(game.grid[1][1].live?).to eq false
     end
+    it 'cells become live thanks to reproduction' do
+      game.tick
+      expect(game.grid[1][0].live?).to eq true
+    end
   end
 
 end

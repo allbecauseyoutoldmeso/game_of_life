@@ -48,6 +48,8 @@ class Game
       return false
     elsif number_live_neighbours(cell) > 3
       return false
+    elsif number_live_neighbours(cell) == 3
+      return true
     else
       return cell.live?
     end
