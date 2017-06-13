@@ -33,7 +33,7 @@ describe Game do
 
   describe '#neighbours' do
     it 'returns an array of cell neighbours' do
-      expect(game.neighbours(game.grid[3][3])).to eq ['d','l','d','l']
+      expect(game.neighbours(cell_11)).to eq [cell_10, cell_12, cell_01, cell_21]
     end
   end
 

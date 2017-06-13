@@ -7,10 +7,9 @@ class Game
   end
 
   def neighbours(cell)
-    puts 'INDEX'
-    puts @grid.flatten.index(cell)
-    puts @grid.flatten.index(cell)/(@grid.length)
-    puts @grid.flatten.index(cell) % @grid.length
+    row = @grid.flatten.index(cell)/(@grid.length)
+    column = @grid.flatten.index(cell) % @grid.length
+    [@grid[row][column-1], @grid[row][column+1], @grid[row-1][column], @grid[row+1][column]]
   end
 
   def tick
