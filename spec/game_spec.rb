@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
 
-  let(:cell_00) {double :cell, live?: false}
+  let(:cell_00) {double :cell, live?: true}
   let(:cell_01) {double :cell, live?: false}
   let(:cell_02) {double :cell, live?: false}
   let(:cell_03) {double :cell, live?: false}
@@ -44,7 +44,14 @@ describe Game do
   describe '#number_live' do
     it 'returns the number of live neighbours' do
       expect(game.number_live(cell_31)).to eq 2
-      expect(game.number_live(cell_11)).to eq 3
+      expect(game.number_live(cell_11)).to eq 4
+    end
+  end
+
+  describe '#tick' do
+    it 'cells die due to underpopulation' do
+      game.tick
+      expect(game.grid[0][0].live?).to eq false
     end
   end
 

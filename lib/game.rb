@@ -1,6 +1,21 @@
+class Cell
+
+  def initialize(boolean)
+    @live = boolean
+  end
+
+  def live?
+    @live
+  end
+
+end
+
+
+
 class Game
 
   attr_reader :grid, :size
+  attr_writer :grid
 
   def initialize(grid)
     @grid = grid
@@ -28,6 +43,17 @@ class Game
   end
 
   def tick
+    next_gen = []
+    grid.each do |row|
+      next_gen_row = []
+      row.each do |cell|
+        next_gen_cell = Cell.new(false) if number_live(cell) < 2
+        next_gen_cell = Cell.new(true) if number_live(cell) >= 2
+        next_gen_row.push(next_gen_cell)
+      end
+      next_gen.push(next_gen_row)
+    end
+    self.grid = next_gen
   end
 
 end
