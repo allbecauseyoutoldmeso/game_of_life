@@ -21,7 +21,7 @@ class Game
   end
 
   def number_live(cell)
-
+    neighbours(cell).select { |neighbour| neighbour.live? }.length
   end
 
   def tick

@@ -41,11 +41,11 @@ describe Game do
     end
   end
 
-  # describe '#number_live' do
-  #   it 'returns the number of live neighbours' do
-  #     expect(game.number_live(cell_31)).to eq 1
-  #     expect(game.number_live(cell_11)).to eq 3
-  #   end
-  # end
+  describe '#number_live' do
+    it 'returns the number of live neighbours' do
+      expect(game.number_live(cell_31)).to eq 1
+      expect(game.number_live(cell_11)).to eq 2
+    end
+  end
 
 end
