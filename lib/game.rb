@@ -35,13 +35,20 @@ class Game
     grid.each do |row|
       next_gen_row = []
       row.each do |cell|
-        next_gen_cell = Cell.new(false) if number_live(cell) < 2
-        next_gen_cell = Cell.new(true) if number_live(cell) >= 2
+        next_gen_cell = Cell.new(next_cell_lives?(cell))
         next_gen_row.push(next_gen_cell)
       end
       next_gen.push(next_gen_row)
     end
     self.grid = next_gen
+  end
+
+  def next_cell_lives?(cell)
+    if number_live(cell) < 2
+      return false
+    else
+      return cell.live?
+    end
   end
 
 end
