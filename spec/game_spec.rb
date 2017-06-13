@@ -61,6 +61,10 @@ describe Game do
       game.tick
       expect(game.grid[1][0].live?).to eq true
     end
+    it 'other cells are unaffected' do
+      game.tick
+      expect(game.grid[1][3].live?).to eq false
+    end
   end
 
 end

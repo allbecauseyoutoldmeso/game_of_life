@@ -37,6 +37,7 @@ class Game
       row.each do |cell|
         next_gen_cell = Cell.new(next_cell_lives?(cell))
         next_gen_row.push(next_gen_cell)
+        puts next_gen_cell.live?
       end
       next_gen.push(next_gen_row)
     end
