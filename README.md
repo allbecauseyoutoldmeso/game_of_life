@@ -22,5 +22,5 @@ In this case you will see the grid oscillating between two configurations...but 
 [ ][x]                 
 [x][ ]
 * To be improved:                
-The Game class and a couple of methods in it could definitely be slimmed down...plus I'd like to build a front end!
+The Game class and a couple of methods in it could definitely be slimmed down, with responsibility extracted to other methods and classes...plus I'd like to build a front end!
 
