@@ -7,12 +7,12 @@ describe Game do
   let(:cell_02) {double :cell, live?: false}
   let(:cell_03) {double :cell, live?: false}
   let(:cell_10) {double :cell, live?: false}
-  let(:cell_11) {double :cell, live?: false}
-  let(:cell_12) {double :cell, live?: false}
+  let(:cell_11) {double :cell, live?: true}
+  let(:cell_12) {double :cell, live?: true}
   let(:cell_13) {double :cell, live?: false}
   let(:cell_20) {double :cell, live?: false}
-  let(:cell_21) {double :cell, live?: false}
-  let(:cell_22) {double :cell, live?: false}
+  let(:cell_21) {double :cell, live?: true}
+  let(:cell_22) {double :cell, live?: true}
   let(:cell_23) {double :cell, live?: false}
   let(:cell_30) {double :cell, live?: false}
   let(:cell_31) {double :cell, live?: false}
@@ -34,6 +34,13 @@ describe Game do
   describe '#neighbours' do
     it 'returns an array of cell neighbours' do
       expect(game.neighbours(cell_11)).to eq [cell_10, cell_12, cell_01, cell_21]
+    end
+  end
+
+  describe '#number_live' do
+    it 'returns the number of live neighbours' do
+      expect(game.number_live(cell_31)).to eq 1
+      expect(game.number_live(cell_11)).to eq 3
     end
   end
 
