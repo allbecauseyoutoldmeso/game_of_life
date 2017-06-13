@@ -15,7 +15,7 @@
 `game.print_grid`               
 `game.tick`                
 `game.print_grid`            
-* The grid is a 2D array of cells, so you can make your own instead of using the 'blinker' sample provided.  For example...
+* The grid is a 2D array of cells, so you can make your own instead of using the 'blinker' sample provided.  For example...           
 `game = Game.new([[Cell.new(false), Cell.new(true)], [Cell.new(true), Cell.new(false)]])`                        
 ...makes an initial grid like this:                   
 [ ][x]                 
