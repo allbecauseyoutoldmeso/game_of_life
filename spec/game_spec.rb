@@ -67,4 +67,10 @@ describe Game do
     end
   end
 
+  describe '#print_grid' do
+    it 'prints the grid to the console' do
+      expect { game.print_grid }.to output("[x][ ][ ][ ]\n[ ][x][x][ ]\n[ ][x][x][ ]\n[ ][ ][ ][ ]\n").to_stdout
+    end
+  end
+
 end

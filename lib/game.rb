@@ -43,7 +43,7 @@ class Game
       end
       next_gen.push(next_gen_row)
     end
-    return next_gen
+    next_gen
   end
 
   def next_cell_lives?(cell)
@@ -55,6 +55,14 @@ class Game
       return true
     else
       return cell.live?
+    end
+  end
+
+  def print_grid
+    grid.each do |row|
+      string_rendering = ''
+      row.each { |cell| cell.live? ? string_rendering << '[x]' : string_rendering << '[ ]' }
+      puts string_rendering
     end
   end
 
