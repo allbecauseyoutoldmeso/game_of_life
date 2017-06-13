@@ -26,7 +26,7 @@ class Game
     array.push grid[row][column+1] unless column == size-1
   end
 
-  def number_live(cell)
+  def number_live_neighbours(cell)
     neighbours(cell).select { |neighbour| neighbour.live? }.length
   end
 
@@ -44,7 +44,9 @@ class Game
   end
 
   def next_cell_lives?(cell)
-    if number_live(cell) < 2
+    if number_live_neighbours(cell) < 2
+      return false
+    elsif number_live_neighbours(cell) > 3
       return false
     else
       return cell.live?

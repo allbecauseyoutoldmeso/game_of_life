@@ -41,10 +41,10 @@ describe Game do
     end
   end
 
-  describe '#number_live' do
+  describe '#number_live_neighbours' do
     it 'returns the number of live neighbours' do
-      expect(game.number_live(cell_31)).to eq 2
-      expect(game.number_live(cell_11)).to eq 4
+      expect(game.number_live_neighbours(cell_31)).to eq 2
+      expect(game.number_live_neighbours(cell_11)).to eq 4
     end
   end
 
@@ -52,6 +52,10 @@ describe Game do
     it 'cells die due to underpopulation' do
       game.tick
       expect(game.grid[0][0].live?).to eq false
+    end
+    it 'cells die due to underpopulation' do
+      game.tick
+      expect(game.grid[1][1].live?).to eq false
     end
   end
 
