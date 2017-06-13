@@ -36,7 +36,8 @@ describe Game do
       expect(game.neighbours(cell_11)).to eq [cell_10, cell_12, cell_01, cell_21]
     end
     it 'can handle edge cases' do
-      expect(game.neighbours(cell_00)).to eq [cell_00, cell_01]
+      expect(game.neighbours(cell_00)).to eq [cell_01, cell_10]
+      expect(game.neighbours(cell_33)).to eq [cell_32, cell_23]
     end
   end
 
