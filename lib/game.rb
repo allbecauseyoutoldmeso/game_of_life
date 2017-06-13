@@ -31,17 +31,19 @@ class Game
   end
 
   def tick
+    self.grid = make_new_gen
+  end
+
+  def make_new_gen
     next_gen = []
     grid.each do |row|
       next_gen_row = []
       row.each do |cell|
-        next_gen_cell = Cell.new(next_cell_lives?(cell))
-        next_gen_row.push(next_gen_cell)
-        puts next_gen_cell.live?
+        next_gen_row.push(Cell.new(next_cell_lives?(cell)))
       end
       next_gen.push(next_gen_row)
     end
-    self.grid = next_gen
+    return next_gen
   end
 
   def next_cell_lives?(cell)
