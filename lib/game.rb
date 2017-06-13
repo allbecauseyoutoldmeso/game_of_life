@@ -8,9 +8,16 @@ class Game
   end
 
   def neighbours(cell)
+    cell_neighbours = []
     row = grid.flatten.index(cell)/size
     column = grid.flatten.index(cell) % size
-    [grid[row][column-1], grid[row][column+1], grid[row-1][column], grid[row+1][column]]
+    puts row
+    puts column
+    cell_neighbours.push grid[row][column-1]
+    cell_neighbours.push grid[row][column+1]
+    cell_neighbours.push grid[row-1][column]
+    cell_neighbours.push grid[row+1][column]
+    cell_neighbours
   end
 
   def number_live(cell)
