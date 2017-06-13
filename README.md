@@ -1,6 +1,6 @@
 # Conway's Game of Life
 
-* Practise tech test done in ruby
+* Practise tech test
 * A zero-player game in which the cells in an orthogonal grid evolve according to the following rules:
     1. Any live cell with fewer than two live neighbours dies.
     2. Any live cell with two or three live neighbours lives on to the next generation.
