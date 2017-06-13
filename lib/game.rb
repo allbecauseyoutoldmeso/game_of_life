@@ -1,4 +1,5 @@
-require 'cell'
+require_relative './cell.rb'
+require_relative './sample_grid_maker.rb'
 
 class Game
 

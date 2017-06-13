@@ -8,4 +8,8 @@ class Cell
     @live
   end
 
+  def make_live
+    @live = true
+  end
+
 end
