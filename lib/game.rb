@@ -1,34 +1,18 @@
 require_relative './cell.rb'
+require_relative './neighbour_manager.rb'
 require_relative './sample_grid_maker.rb'
 
 class Game
 
-  attr_reader :grid, :size
-  attr_writer :grid
+  attr_accessor :grid
 
   def initialize(grid)
     @grid = grid
-    @size = grid.length
   end
 
   def neighbours(cell)
-    cell_neighbours = []
-    row = grid.flatten.index(cell)/size
-    column = grid.flatten.index(cell) % size
-    make_neighbours_array(row, column, cell_neighbours)
-    cell_neighbours
-  end
-
-  def make_neighbours_array(row, column, array)
-    push_cells(row-1, column, array, false) unless row == 0
-    push_cells(row, column, array, true)
-    push_cells(row+1, column, array, false) unless row == size-1
-  end
-
-  def push_cells(row, column, array, home_row)
-    array.push grid[row][column-1] unless column == 0
-    array.push grid[row][column] unless home_row == true
-    array.push grid[row][column+1] unless column == size-1
+    neighbour_manager = NeighbourManager.new(cell, grid)
+    neighbour_manager.get_neighbours
   end
 
   def number_live_neighbours(cell)
