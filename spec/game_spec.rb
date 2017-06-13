@@ -53,7 +53,7 @@ describe Game do
       game.tick
       expect(game.grid[0][0].live?).to eq false
     end
-    it 'cells die due to underpopulation' do
+    it 'cells die due to overpopulation' do
       game.tick
       expect(game.grid[1][1].live?).to eq false
     end
