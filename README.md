@@ -2,7 +2,7 @@
 
 * Practise tech test
 * A zero-player game in which the cells in an orthogonal grid evolve according to the following rules:
-    1. Every cell has eight 'neighbours'.
+    1. Each cell has eight 'neighbours'.
     2. Any live cell with fewer than two live neighbours dies ('underpopulation').
     3. Any live cell with two or three live neighbours lives on to the next generation.
     4. Any live cell with more than three live neighbours dies ('overpopulation').
