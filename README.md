@@ -1,6 +1,6 @@
 # Conway's Game of Life
 
-* Practise tech test completed in one day.
+* Practise tech test.
 * A zero-player game in which the cells in an orthogonal grid evolve according to the following rules:
     1. Each cell has eight 'neighbours'.
     2. Any live cell with fewer than two live neighbours dies ('underpopulation').
