@@ -3,21 +3,19 @@ require_relative './cell.rb'
 class SampleGridMaker
 
   def blinker
-    blinker_grid = basic_grid
-    make_coordinates_live(blinker_grid, [[1,2],[2,2],[3,2]])
-    blinker_grid
+    make_coordinates_live([[1,2],[2,2],[3,2]])
   end
 
   def beacon
-    beacon_grid = basic_grid
-    make_coordinates_live(beacon_grid, [[1,1],[1,2],[2,1],[2,3],[3,3],[3,4],[4,3],[4,4]] )
-    beacon_grid
+    make_coordinates_live([[1,1],[1,2],[2,1],[2,2],[3,3],[3,4],[4,3],[4,4]] )
   end
 
   def toad
-    toad_grid = basic_grid
-    make_coordinates_live(toad_grid, [[2,2],[2,3],[2,4],[3,1],[3,2],[3,3]])
-    toad_grid
+    make_coordinates_live([[2,2],[2,3],[2,4],[3,1],[3,2],[3,3]])
+  end
+
+  def glider
+    make_coordinates_live([[1,1],[1,3],[2,2],[2,3],[3,2]])
   end
 
   def basic_grid
@@ -30,10 +28,12 @@ class SampleGridMaker
     grid
   end
 
-  def make_coordinates_live(grid, coordinate_array)
+  def make_coordinates_live(coordinate_array)
+    grid = basic_grid
     coordinate_array.each do |coordinates|
       grid[coordinates[0]][coordinates[1]].make_live
     end
+    grid
   end
 
 end

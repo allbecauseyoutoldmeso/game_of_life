@@ -10,4 +10,10 @@ describe SampleGridMaker do
     end
   end
 
+  describe '#make_coordinates_live' do
+    it 'makes specified coordinates live' do
+    expect(grid_maker.make_coordinates_live([[1,1]])[1][1].live?).to eq true
+    end 
+  end
+
 end
