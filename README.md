@@ -15,12 +15,11 @@
 `game.print_grid`               
 `game.tick`                
 `game.print_grid`          
-In this case you will see the grid oscillating between two configurations...but the possibilities are endless!
-* The grid is a 2D array of cells, so you can make your own instead of using the 'blinker' sample provided.  For example...           
+In this case you will see the grid oscillating between two configurations.  Instead of `blinker` you can try `glider`, `beacon`, or `toad`.  Or...
+* Try making your own grids!  The grid is a 2D array of cells, so you can make your own instead of using the 'blinker' sample provided.  For example...           
 `game = Game.new([[Cell.new(false), Cell.new(true)], [Cell.new(true), Cell.new(false)]])`                        
 ...makes an initial grid like this:                   
 [ ][x]                 
 [x][ ]
 * To be improved:                
 The Game class and a couple of methods in it could definitely be slimmed down, with responsibility extracted to other methods and classes...plus I'd like to build a front end!
-
