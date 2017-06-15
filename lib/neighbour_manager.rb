@@ -8,6 +8,10 @@ class NeighbourManager
     @size = grid.length
   end
 
+  def number_live
+    get_neighbours.select { |neighbour| neighbour.live? }.length
+  end
+
   def get_neighbours
     cell_neighbours = []
     row = grid.flatten.index(cell)/size

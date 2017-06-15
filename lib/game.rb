@@ -10,13 +10,14 @@ class Game
     @grid = grid
   end
 
-  def neighbours(cell)
-    neighbour_manager = NeighbourManager.new(cell, grid)
-    neighbour_manager.get_neighbours
-  end
+  # def neighbours(cell)
+  #   neighbour_manager = NeighbourManager.new(cell, grid)
+  #   neighbour_manager.get_neighbours
+  # end
 
   def number_live_neighbours(cell)
-    neighbours(cell).select { |neighbour| neighbour.live? }.length
+    neighbour_manager = NeighbourManager.new(cell, grid)
+    neighbour_manager.number_live
   end
 
   def tick
