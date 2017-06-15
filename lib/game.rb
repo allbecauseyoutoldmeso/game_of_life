@@ -1,5 +1,4 @@
 require_relative './cell.rb'
-# require_relative './neighbour_manager.rb'
 require_relative './sample_grid_maker.rb'
 require_relative './new_generation_builder.rb'
 
@@ -12,8 +11,7 @@ class Game
   end
 
   def tick
-    new_generation_builder = NewGenerationBuilder.new(self.grid)
-    self.grid = new_generation_builder.make_new_gen
+    self.grid = NewGenerationBuilder.new(self.grid).make_new_gen
   end
 
   def print_grid
