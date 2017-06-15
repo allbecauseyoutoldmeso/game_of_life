@@ -1,11 +1,8 @@
-require_relative './cell.rb'
 require_relative './neighbour_manager.rb'
-require_relative './sample_grid_maker.rb'
-require_relative './new_generation_builder.rb'
 
-class Game
+class NewGenerationBuilder
 
-  attr_accessor :grid
+  attr_reader :grid
 
   def initialize(grid)
     @grid = grid
@@ -14,11 +11,6 @@ class Game
   def number_live_neighbours(cell)
     neighbour_manager = NeighbourManager.new(cell, grid)
     neighbour_manager.number_live
-  end
-
-  def tick
-    new_generation_builder = NewGenerationBuilder.new(self.grid)
-    self.grid = new_generation_builder.make_new_gen
   end
 
   def make_new_gen
@@ -42,14 +34,6 @@ class Game
       return true
     else
       return cell.live?
-    end
-  end
-
-  def print_grid
-    grid.each do |row|
-      string_rendering = ''
-      row.each { |cell| cell.live? ? string_rendering << '[x]' : string_rendering << '[ ]' }
-      puts string_rendering
     end
   end
 
