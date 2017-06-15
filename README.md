@@ -16,10 +16,12 @@
 `game.tick`                
 `game.print_grid`          
 In this case you will see the grid oscillating between two configurations.  Instead of `blinker` you can try `glider`, `beacon`, or `toad`.  Or...
-* Try making your own grids!  The grid is a 2D array of cells, so you can make your own instead of using the 'blinker' sample provided.  For example...           
-`game = Game.new([[Cell.new(false), Cell.new(true)], [Cell.new(true), Cell.new(false)]])`                        
-...makes an initial grid like this:                   
+* Try making your own grids!  The grid is a 2D array of cells, each of which are initiated as `live = true` or `live = false`.  For example...           
+`my_grid = [[Cell.new(false), Cell.new(true)], [Cell.new(true), Cell.new(false)]]`                        
+...makes a grid like this:                   
 [ ][x]                 
-[x][ ]
+[x][ ]     
+And then you can start the game like this:        
+`game = Game.new(my_grid)`              
 * To be improved:                
 I'd like to build a front end!
