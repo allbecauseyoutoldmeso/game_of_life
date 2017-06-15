@@ -1,5 +1,5 @@
 require_relative './cell.rb'
-require_relative './neighbour_manager.rb'
+# require_relative './neighbour_manager.rb'
 require_relative './sample_grid_maker.rb'
 require_relative './new_generation_builder.rb'
 
@@ -11,38 +11,9 @@ class Game
     @grid = grid
   end
 
-  def number_live_neighbours(cell)
-    neighbour_manager = NeighbourManager.new(cell, grid)
-    neighbour_manager.number_live
-  end
-
   def tick
     new_generation_builder = NewGenerationBuilder.new(self.grid)
     self.grid = new_generation_builder.make_new_gen
-  end
-
-  def make_new_gen
-    next_gen = []
-    grid.each do |row|
-      next_gen_row = []
-      row.each do |cell|
-        next_gen_row.push(Cell.new(next_cell_lives?(cell)))
-      end
-      next_gen.push(next_gen_row)
-    end
-    next_gen
-  end
-
-  def next_cell_lives?(cell)
-    if number_live_neighbours(cell) < 2
-      return false
-    elsif number_live_neighbours(cell) > 3
-      return false
-    elsif number_live_neighbours(cell) == 3
-      return true
-    else
-      return cell.live?
-    end
   end
 
   def print_grid

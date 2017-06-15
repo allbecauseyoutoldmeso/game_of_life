@@ -2,7 +2,7 @@ require_relative './neighbour_manager.rb'
 
 class NewGenerationBuilder
 
-  attr_reader :grid
+  attr_reader :grid  
 
   def initialize(grid)
     @grid = grid

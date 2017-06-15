@@ -31,13 +31,6 @@ describe Game do
                              [cell_30, cell_31, cell_32, cell_33]]
   end
 
-  describe '#number_live_neighbours' do
-    it 'returns the number of live neighbours' do
-      expect(game.number_live_neighbours(cell_31)).to eq 2
-      expect(game.number_live_neighbours(cell_11)).to eq 4
-    end
-  end
-
   describe '#tick' do
     it 'cells die due to underpopulation' do
       game.tick
